@@ -1,1 +1,83 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defreturn" id="277" inline="false" x="365" y="22">
+    <mutation></mutation>
+    <field name="NAME">lights</field>
+    <statement name="STACK">
+      <block type="oled_color" id="62">
+        <field name="OBJECT">GREEN</field>
+        <next>
+          <block type="multimedia_playwav" id="299">
+            <field name="WAV"></field>
+            <next>
+              <block type="multimedia_volume" id="306">
+                <field name="VOLUME">MUTE</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_if" id="158" inline="false" x="59" y="50">
+    <value name="IF0">
+      <block type="sensor_object" id="117">
+        <field name="OBJECT">RIGHTFRONT</field>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="movement_rightmotor" id="246" inline="true">
+        <next>
+          <block type="movement_forward" id="12">
+            <next>
+              <block type="movement_reverse" id="22">
+                <next>
+                  <block type="movement_left" id="32">
+                    <next>
+                      <block type="movement_right" id="43">
+                        <next>
+                          <block type="movement_stop" id="53"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="controls_if" id="166" inline="false">
+        <value name="IF0">
+          <block type="sensor_object" id="133">
+            <field name="OBJECT">LEFTFRONT</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_leftmotor" id="236" inline="true">
+            <next>
+              <block type="movement_forward" id="176">
+                <next>
+                  <block type="movement_reverse" id="187">
+                    <next>
+                      <block type="movement_left" id="197">
+                        <next>
+                          <block type="movement_right" id="216">
+                            <next>
+                              <block type="movement_stop" id="226"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
